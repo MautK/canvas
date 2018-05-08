@@ -20,6 +20,7 @@ public class CanvasView extends View {
     private Path mpath;
     private Paint mpaint;
     private float mX, mY;
+    private float startX, startY, stopX, stopY;
     private static final float TOLERANCE = 5;
     Context context;
 
@@ -34,7 +35,7 @@ public class CanvasView extends View {
         mpaint.setColor(Color.BLACK);
         mpaint.setStyle(Paint.Style.STROKE);
         mpaint.setStrokeJoin(Paint.Join.ROUND);
-        mpaint.setStrokeWidth(4f);
+        mpaint.setStrokeWidth(8f);
     }
 
     @Override
@@ -50,8 +51,18 @@ public class CanvasView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        startX = 20;
+        startY = 100;
+        stopX = 200;
+        stopY = 50;
+
+        canvas.drawLine(10, 20, 30, 40, mpaint);
+
+        canvas.drawLine(startX, startY, stopX, stopY, mpaint);
+
         canvas.drawPath(mpath, mpaint);
     }
+
 
     private void StartTouch(float x, float y) {
         mpath.moveTo(x, y);
