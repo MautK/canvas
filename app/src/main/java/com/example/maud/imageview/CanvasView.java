@@ -50,6 +50,12 @@ public class CanvasView extends View {
         //this should draw a line
         canvas.drawLine(10, 20, 30, 40, mpaint);
         canvas.drawLine(startX, startY, stopX, stopY, mpaint);
+        //use path to draw more complex shapes
+        //define the shape by adding lines to the path
+        // https://developer.android.com/training/custom-views/custom-drawing
+
+        //mPath.moveTo for set the beginning of the next contour to the point (x,y)
+        //mPath.lineTo add a line from the last point to the specified point (x,y)
 
         //this draws the path from the Touch event
         canvas.drawPath(mpath, mpaint);
