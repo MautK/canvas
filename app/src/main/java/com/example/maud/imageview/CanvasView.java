@@ -19,6 +19,10 @@ public class CanvasView extends View {
     private Canvas mcanvas;
     private Path mpath;
     private Paint mpaint;
+    private Paint mpaintW;
+    private Paint mpaintB;
+    private Paint mpaintR;
+    private Paint mpaintG;
     private float mX, mY;
     private float startX, startY, stopX, stopY;
     private static final float TOLERANCE = 5;
@@ -32,7 +36,6 @@ public class CanvasView extends View {
         mpath = new Path();
         mpaint = new Paint();
         mpaint.setAntiAlias(true);
-        mpaint.setColor(Color.BLACK);
         mpaint.setStyle(Paint.Style.STROKE);
         mpaint.setStrokeJoin(Paint.Join.ROUND);
         mpaint.setStrokeWidth(8f);
@@ -58,6 +61,8 @@ public class CanvasView extends View {
         //mPath.lineTo add a line from the last point to the specified point (x,y)
 
         //this draws the path from the Touch event
+        canvas.drawPath(mpath, mpaint);
+        mpaint.setColor(Color.BLUE);
         canvas.drawPath(mpath, mpaint);
     }
 
