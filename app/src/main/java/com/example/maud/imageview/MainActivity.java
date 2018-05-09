@@ -9,13 +9,13 @@ import static com.example.maud.imageview.R.id.canvas;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CanvasView canvasView;
-
+    private fftView fftVieww;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        canvasView = findViewById(R.id.canvas);
+        CanvasView canvasView = findViewById(R.id.canvas);
+        fftVieww = findViewById(R.id.canvastwo);
     }
     }

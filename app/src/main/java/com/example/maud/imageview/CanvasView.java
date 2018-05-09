@@ -19,10 +19,6 @@ public class CanvasView extends View {
     private Canvas mcanvas;
     private Path mpath;
     private Paint mpaint;
-    private Paint mpaintW;
-    private Paint mpaintB;
-    private Paint mpaintR;
-    private Paint mpaintG;
     private float mX, mY;
     private float startX, startY, stopX, stopY;
     private static final float TOLERANCE = 5;
@@ -45,14 +41,6 @@ public class CanvasView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        startX = 20;
-        startY = 100;
-        stopX = 200;
-        stopY = 50;
-
-        //this should draw a line
-        canvas.drawLine(10, 20, 30, 40, mpaint);
-        canvas.drawLine(startX, startY, stopX, stopY, mpaint);
         //use path to draw more complex shapes
         //define the shape by adding lines to the path
         // https://developer.android.com/training/custom-views/custom-drawing
