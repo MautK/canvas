@@ -18,9 +18,4 @@ public class MainActivity extends AppCompatActivity {
 
         canvasView = findViewById(R.id.canvas);
     }
-
-    public void clearCanvas(View view) {
-        canvasView.clearCanvas();
-    }
-
     }

@@ -39,15 +39,6 @@ public class CanvasView extends View {
     }
 
     @Override
-    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        super.onSizeChanged(w, h, oldw, oldh);
-
-        mbitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-        mcanvas = new Canvas(mbitmap);
-
-    }
-
-    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
@@ -56,12 +47,24 @@ public class CanvasView extends View {
         stopX = 200;
         stopY = 50;
 
+        //this should draw a line
         canvas.drawLine(10, 20, 30, 40, mpaint);
-
         canvas.drawLine(startX, startY, stopX, stopY, mpaint);
 
+        //this draws the path from the Touch event
         canvas.drawPath(mpath, mpaint);
     }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+
+        mbitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+        mcanvas = new Canvas(mbitmap);
+
+    }
+
+
 
 
     private void StartTouch(float x, float y) {
